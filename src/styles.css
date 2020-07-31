@@ -1,0 +1,94 @@
+body {
+  background: url(./../assets/images/background.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+.container-fluid {
+  position: relative;
+  background: rgba(255, 255, 255, .5);
+  box-shadow: 0 15px 20px rgba(0, 0, 0, .5);
+  padding: 50px;
+  margin-top: 50px;
+  border-radius: 3px;
+  min-height: 100vh;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  padding: 10px;
+}
+
+h1 {
+  padding-top: 50px;
+  padding-left: 20px;
+  color: #FFF;
+  font-size: 40px;
+  text-shadow: 3px 3px #000;
+}
+
+h2, #favorites-button {
+  color: darkslategrey;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+#result0, #result1, #result2, #result3, #result4 {
+  display:none;
+}
+
+.search-forms {
+  display: grid;
+  width: 18rem;
+  margin:5px;
+}
+
+.card {
+  display: grid;
+}
+
+img {
+  width: 200px;
+  height: auto;
+}
+
+select {
+  display: block;
+  min-width: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#people-button, #movie-button {
+  display: inline;
+  background-color: darkslategrey;
+  color: white;
+}
+
+
+.btn-link:link, h2:link {
+  color: darkslategrey;
+}
+
+.btn-link:visited, h2:visited {
+  color: palevioletred;
+}
+
+.btn-link:hover, h2:hover {
+  color: darkslategrey;
+}
+
+.btn-link:active, h2:active {
+  color: orangered;
+}
+

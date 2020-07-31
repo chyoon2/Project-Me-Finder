@@ -6,7 +6,7 @@
 
 ## Description
 
-ADD DESCRIPTION
+The program allows users to find specific movies and add them to a favorites list. The user can search by Movie Title, Actor, or Director and see most popular movie results. The user can then add certain demographic or identity tags to the movie. The intent of this project is to create a program that will allow users to see positive representations of their own or others' identities in media. This is particularly important for underrepresented groups as studies show that positive media representation is a critical factor in equity and social justice for marginalized communities.  Future stretch goals include: the ability to rate the representation as more or less positive, rate the movie overall, create a forum to discuss representations in pop culture, and to create/store tagging metadata in an API database that others can access to get movie recommendations. 
 
 ## Setup/Installation Requirements
 
@@ -38,12 +38,14 @@ ADD DESCRIPTION
 #### Get a unique API Key
 | Steps | Example |
 | -------- | ----- |
-| To get an API key for the Project Me Finder website, go to the [Link Text](LINK) website.  | ![Go to the LINK HERE site](assets/images/readme/IMAGE-TITLE.PNG) |
-|  Enter your email and click on the 'Get Free Key' button  |  ![Get Free Key button](assets/images/readme/IMAGE-TITLE.PNG)  |
-|  Enter your information to sign up for a free account  |  ![Sign up for a free account](assets/images/readme/IMAGE-TITLE.PNG)  |
-|  Your API key will be provided to you once you have signed in  |  ![Page with your API key and information](assets/images/readme/IMAGE-TITLE.PNG)   |
+| To get an API key for the Project Me Finder website, go to the [The Movie Database](https://www.themoviedb.org/) website.  | Go to the tMDB site |
+|  Create an account with TMDb  |  Join TMDb   |
+|  Enter your information to sign up for a free account  |  Sign up for a free account  |
+|  You will need to verify your email address and then log into the site.  |  Click settings under your profile tag   |
+|  Access the API settings  |  Click API on settings sidebar  |
+|  Access the API key  |  Scroll to "API Key"   |
 |  Your API key is unique to you. DO NOT SHARE YOUR KEY. Below are the instructions for _`Add .env file`_ which will walk you through setting up a .env file. You will store your key inside of that file to keep it private.  |  see _`Add .env file`_ below  |  
-|  After you have added your API key to your .env file _(see instructions below for setting up your .env file)_, type the command `npm run build` into your terminal and hit enter. This will incorporate your unique API into the project  |  |
+
 
 
 #### Add .env file to project
@@ -52,7 +54,8 @@ ADD DESCRIPTION
 |Create a file named .env in the head (top) directory of the project |     |
 | Once you have added the .env file it should be **greyed out**!!! A greyed out file indicates that it is private, will not be available to the public if you push the project to github and will keep any information inside of it **(such as your API key)** private |  ![the .env file](assets/images/readme/env-file.PNG)  |
 |    Inside of your .env file, you can add your API key. See the format in the image to the right.   |   ![API format in .env file](assets/images/readme/api-env.PNG)    |
-| **_IMPORTANT NOTE_**:  Do not delete or change anything in the project's .gitignore file. This file specifies which directories and files are private and should not be shared or shown to others. The .gitignore should look as it does in the example to the right |  ![.gitignore file](assets/images/readme/gitignore.PNG)  |
+| **_IMPORTANT NOTE_**:  Do not delete or change anything in the project's .gitignore file. This file specifies which directories and files are private and should not be shared or shown to others. The .gitignore should look as it does in the example to the right |  ![.gitignore file](assets/images/readme/gitignore.PNG)  
+|  After you have added your API key to your .env file, type the command `npm run build` into your terminal and hit enter. This will incorporate your unique API into the project |
 
 
 #### Additional Setup/Installation Notes:
@@ -65,11 +68,11 @@ ADD DESCRIPTION
 
 | Behavior | Input | Output |  Completed(Y/N?)  | 
 | -------- | ----- | ------ | -------- |
-|   Program will search for result based on paramater and return any matching result   |   title   |   specific movie by title   |    N    |
-|   Program will accept a variety of parameters and return any matching result    |   actor, director, title, genre    |     specific movies related to parameter selection    |    N   |
-| Program will add predefined tags to movies | user selects a predefined tag  | tag added to movie | N |
-| Program will create a favorites list that the user can name/title themselves |   User names list `Favorite Directors` |   Charles Burnett  |   N   |
-| Program will add a movie to a favorites list | User selects Add `Killer of Sheep` | Favorite Directors {Director: Charles Burnett, Movie Titles: ["Killer of Sheep"]} |   N   |
+|   Program will search for result based on paramater and return any matching result   |   title   |   specific movie by title   |    Y    |
+|   Program will accept a variety of parameters and return any matching result    |   actor, director, title    |     specific movies related to parameter selection    |    Y  |
+| Program will add predefined tags to movies | user selects a predefined tag  | tag added to movie | Y |
+| Program will create a favorites list |   Favorite Movies |   Waterworld  |   Y  |
+| Program will add a movie to a favorites list | User selects Add `Killer of Sheep` | Favorite Movies: ["Killer of Sheep"]} |   Y   |
 
 ## Specifications Stretch Goals
 | Behavior | Input | Output |  Completed(Y/N?)  | 
@@ -79,14 +82,18 @@ ADD DESCRIPTION
 
 ## Known Bugs
 
-| Location (html/css/js & specific location if known) |  Message  | Bug | Resolved (Y/N) |  How was the issue resolved?  |
-| ------- | ----- | ------ | ------ | --------- |
-|  |  |  |  |  |
+| Bug | Resolved (Y/N) |  How was the issue resolved?  |
+| ------- | ----- | ------ | 
+| When adding to favorites list it would add every item on the list again and give repeated results  | Y | Moved favorites list click function outside of the submit function for favorites | 
+| After doing a search with 5 results, if the user then searced and received fewer than 5 results, the previous results would still show in the remaining spaces | Y  | Hid each accordian on search and then showed results for only the new search | 
+| For any of the results, when user chooses and adds tags for a movie and then searches for a different movie or actor, the previous tags will show in the first movie with the tag checkboxes still checked | Y | Add a reset-tag class to all tags and set `$(".reset-tag").each(function(){$(this).prop("checked", false);` in main.js | 
+| For the second result and beyond, when looking at movies, if you add tags and then hit add tags and check a new tag, the original tags will be present, but then all three will be inserted so that you have multiples of the same tag - the first   | N | n/a |
+|  When the second or third movies are added to the list, an empty bullet point is added below  |  Y  |  Set list style type to none for list item tags  | 
 
 
 ## Support and contact details
 
-XXXX  
+If you have any questions or comments, please reach out via email at mariel.hamson@gmail.com. 
 
 ## Technologies Used
 
@@ -107,4 +114,4 @@ XXXX
 
 *This site is licensed under the MIT license.*
 
-Copyright (c) 2020 **_Authors_**
+Copyright (c) 2020 **_Mariel Hamson, Jason Khan, Sara Kane, Chris Yoon & Brittany Lindgren_**
